@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMJ Gutierrez Dental Clinic | Book an Appointment</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="emj-logo.png" alt="EMJ Dental Clinic logo">
+      </div>
+      <div>
+        <h1>EMJ Gutierrez Dental Clinic</h1>
+        <p>Your smile, our care.</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <nav class="social-links" aria-label="Social media links">
+        <a href="https://www.facebook.com/p/EMJ-Gutierrez-Dental-Clinic-100088216722681/" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+          <img src="facebook-logo.png" alt="Facebook" style="width:26px; height:26px; display:block;">
+        </a>
+        <a href="https://www.instagram.com/emjgutierrezdental?stkn=OGR5czYzbHJyd2tl" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+          <img src="instagram-logo.png" alt="Instagram" style="width:26px; height:26px; display:block;">
+        </a>
+        <a href="https://www.threads.com/@emjgutierrezdental?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="social-link threads" aria-label="Threads">
+          <img src="threads-logo.png" alt="Threads" style="width:26px; height:26px; display:block;">
+        </a>
+        <a href="https://www.tiktok.com/@emjgutierrezdental?_r=1&_t=ZS-99oIDZFaeuq" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok">
+          <img src="tiktok-logo.png" alt="TikTok" style="width:26px; height:26px; display:block;">
+        </a>
+      </nav>
+      <a class="header-link" href="#booking">Book Now</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PATIENT APPOINTMENTS</span>
+        <h2>Book your dental visit with ease.</h2>
+        <p>Complete the form below. Your request will be reviewed by our clinic and you will receive an email and SMS update.</p>
+      </div>
+      <div class="hero-card">
+        <span>Clinic Hours</span>
+        <strong>By appointment</strong>
+        <small>We will contact you for confirmation.</small>
+      </div>
+    </section>
+
+    <section id="booking" class="panel">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ONLINE BOOKING</span>
+          <h3>Appointment Request</h3>
+        </div>
+      </div>
+
+      <form id="appointmentForm">
+        <div class="form-grid">
+          <label>
+            Full Name *
+            <input name="name" type="text" placeholder="Juan Dela Cruz" required>
+          </label>
+
+          <label>
+            Email Address *
+            <input name="email" type="email" placeholder="juan@example.com" required>
+          </label>
+
+          <label>
+            Mobile Number *
+            <input name="phone" type="tel" placeholder="09XXXXXXXXX" required>
+          </label>
+
+          <label>
+            Appointment Date *
+            <input name="date" type="date" required>
+          </label>
+
+          <label>
+            Preferred Time *
+            <select name="time" required>
+              <option value="">Select a time</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+          </label>
+
+          <label>
+            Dental Service *
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Dental consultation</option>
+              <option>Teeth cleaning</option>
+              <option>Tooth extraction</option>
+              <option>Tooth filling</option>
+              <option>Root canal treatment</option>
+              <option>Dental braces consultation</option>
+              <option>Denture consultation</option>
+              <option>Teeth whitening</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred Dentist
+            <input name="dentist" type="text" placeholder="Optional">
+          </label>
+
+          <label class="full-width">
+            Notes / Dental Concern
+            <textarea name="notes" rows="4" placeholder="Tell us briefly about your concern."></textarea>
+          </label>
+        </div>
+
+        <label class="consent">
+          <input id="consent" type="checkbox" required>
+          <span>I agree to be contacted by EMJ Dental Clinic regarding this appointment.</span>
+        </label>
+
+        <button id="submitButton" type="submit">Submit Appointment Request</button>
+        <p class="form-note">Submitting this form does not mean the appointment is already confirmed.</p>
+      </form>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="qr-panel">
+      <div>
+        <span class="eyebrow">SHARE YOUR BOOKING PAGE</span>
+        <h3>Appointment QR Code</h3>
+        <p>Generate a QR code for this booking page and place it on posters, business cards, or social media.</p>
+        <div class="qr-actions">
+          <button id="downloadQr" class="secondary" type="button">Download QR Code</button>
+          <button id="printQr" class="secondary" type="button">Print QR Code</button>
+        </div>
+      </div>
+      <div class="qr-box">
+        <div id="qrcode"></div>
+        <small id="qrUrl"></small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> EMJ Dental Clinic. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
